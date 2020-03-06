@@ -11,7 +11,6 @@
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="styles/style.css" rel='stylesheet' type='text/css'>
     <link href="styles/fonts.css" rel='stylesheet' type='text/css'>
-    
     <!--  Favicon  -->
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -28,18 +27,45 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-xl justify-content-between">
                     <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png"></a>
-                    <div id="webapp_cover" class="d-block d-xl-none ml-auto">
-                        <div data-toggle="collapse" id="menu_button"
-                             data-target="#navbarSupportedContent"
-                             aria-controls="navbarSupportedContent" aria-expanded="false"
-                             aria-label="Toggle navigation">
-                            <input type="checkbox" id="menu_checkbox">
-                            <label for="menu_checkbox" id="menu_label">
-                                <div id="menu_text_bar"></div>
-                            </label>
+                    <div class="hamburger-wrap">
+                        <div class="menuToggle d-block d-xl-none">
+                            <input type="checkbox"/>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <ul class="menu-mobile">
+                                <li>
+                                    <a class="nav-link" href="#">O mnie</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#">Współpraca</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#">Portfolio</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#">Opinie</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#">Kontakt</a>
+                                </li>
+                                <li class="d-flex justify-content-center">
+                                    <div class="dropdown dropdown-mobile">
+                                        <a class="dropdown-toggle btn btn-lang-mobile"
+                                           href="#" id="navbarDropdownMobile"
+                                           role="button" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false">PL<img src="images/pl_pl.gif">
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-mobile"
+                                             aria-labelledby="navbarDropdownMobile">
+                                            <a class="dropdown-item" href="#">EN<img src="images/en_gb.gif"
+                                                                                     class=" ml-3"></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav w-75 justify-content-around mx-auto">
                             <li class="nav-item ">
@@ -63,8 +89,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="dropdown d-none d-xl-block">
-                        <a class="nav-link dropdown-toggle btn"
+                    <div class="dropdown dropdown-desktop d-none d-xl-block">
+                        <a class="nav-link dropdown-toggle btn btn-lang-desktop"
                            href="#" id="navbarDropdown"
                            role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">PL<img src="images/pl_pl.gif">
@@ -167,45 +193,12 @@
                     <form action="#">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="name" class="form-name">Imię</label>
-                                <input type="email" class="form-control" id="name" placeholder="Imię">
+                                <input type="text" class="form-control" id="name" required>
+                                <label for="name" class="form-control-placeholder">Imię</label>
                             </div>
                             <div class="form-group col-md-6 mb-0 d-block d-md-none">
-                                <label for="email-sm" class="sr-only">Adres e-mail</label>
-                                <input type="email" id="email-sm" class="form-control" placeholder="Adres e-mail">
-                                <h5 class="gender-check-title">Jestem:</h5>
-                                <div class="gender-check">
-                                    <input class="gender-check-input" type="radio" name="radio-lg"
-                                           id="radio-lg"
-                                           value="option1" checked>
-                                    <label class="gender-check-label" for="radio-lg-2">
-                                        Klientem
-                                    </label>
-                                </div>
-                                <div class="gender-check">
-                                    <input class="gender-check-input" type="radio" name="radio-lg"
-                                           id="radio-lg-2"
-                                           value="option2">
-                                    <label class="gender-check-label" for="radio-lg-2">
-                                        Modelką
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-item col-md-6">
-                                <div class="select-wrap">
-                                    <label for="select" class="sr-only">Wybierz temat</label>
-                                    <select id="select" class="form-item__element form-item__element--select" required>
-                                        <option disabled selected value="">Wybierz temat</option>
-                                        <option value="1">Temat 1</option>
-                                        <option value="2">Temat 2</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6 mb-0 d-none d-md-block">
-                                <label for="email-xl" class="sr-only">Adres e-mail</label>
-                                <input type="email" id="email-xl" class="form-control" placeholder="Adres e-mail">
+                                <input type="text" id="email-sm" class="form-control" required>
+                                <label for="email-sm" class="form-control-placeholder">Adres e-mail</label>
                                 <h5 class="gender-check-title">Jestem:</h5>
                                 <div class="gender-check">
                                     <input class="gender-check-input" type="radio" name="radio-sm"
@@ -224,10 +217,42 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="form-item col-md-6">
+                                <div class="select-wrap">
+                                    <label for="select" class="sr-only">Wybierz temat</label>
+                                    <select id="select" class="form-item__element form-item__element--select" required>
+                                        <option disabled selected value="">Wybierz temat</option>
+                                        <option value="1">Temat 1</option>
+                                        <option value="2">Temat 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 mb-0 d-none d-md-block">
+                                <input type="text" id="email-md" class="form-control" required>
+                                <label for="email-md" class="form-control-placeholder">Adres e-mail</label>
+                                <h5 class="gender-check-title">Jestem:</h5>
+                                <div class="gender-check">
+                                    <input class="gender-check-input" type="radio" name="radio-md"
+                                           id="radio-md"
+                                           value="option1" checked>
+                                    <label class="gender-check-label" for="radio-md">
+                                        Klientem
+                                    </label>
+                                </div>
+                                <div class="gender-check">
+                                    <input class="gender-check-input" type="radio" name="radio-md"
+                                           id="radio-md-2"
+                                           value="option2">
+                                    <label class="gender-check-label" for="radio-md-2">
+                                        Modelką
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-group col-md-6 mb-0">
-                                <label for="textarea" class="sr-only">Textarea</label>
-                                <textarea class="form-control w-100" rows="8" id="textarea"
-                                          placeholder="Treść wiadomości"></textarea>
+                                <textarea class="form-control w-100" rows="7" id="textarea" required></textarea>
+                                <label for="textarea" class="form-control-placeholder">Treść wiadomości</label>
                             </div>
                             <div class="form-group form-check col-10 col-md-12 mx-auto text-md-center">
                                 <div class="accept-checkbox">
@@ -273,4 +298,19 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
 </body>
+<script>
+    const header = document.querySelector('header div');
+    window.addEventListener("resize", () => ChangeContainerSize());
+    window.addEventListener("DOMContentLoaded", () => ChangeContainerSize());
+
+    function ChangeContainerSize() {
+        if (window.innerWidth < 1200) {
+            header.classList.remove('container');
+            header.classList.add('container-fluid');
+        } else {
+            header.classList.remove('container-fluid');
+            header.classList.add('container');
+        }
+    }
+</script>
 </html>
